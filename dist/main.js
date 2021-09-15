@@ -1,1 +1,1 @@
-console.log("test");
+(()=>{"use strict";const e=document.querySelector("#content");!function(){const t=document.createElement("h1");t.textContent="We have it all";const n=document.createElement("h2");n.textContent="Whether its filling delicacies or filler text";const c=document.createElement("button");c.textContent="See Menu",e.appendChild(t),e.appendChild(n),e.appendChild(c)}()})();

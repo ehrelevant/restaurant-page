@@ -1,1 +1,4 @@
-console.log('test');
+
+import {loadHome} from './homeLoader.js';
+
+loadHome()
