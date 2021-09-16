@@ -1,4 +1,13 @@
 
-import {loadHome} from './homepage.js';
+import {homepageQueue} from './homepage.js';
 
-loadHome()
+const content = document.querySelector('#content')
+
+function displayPage(pageQueue, content) {
+    content.textContent = '';
+    for (const element of homepageQueue) {
+        content.appendChild(element);
+    }
+}
+
+displayPage(homepageQueue, content);
