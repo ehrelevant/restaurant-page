@@ -1,4 +1,4 @@
 
-import {loadHome} from './homeLoader.js';
+import {loadHome} from './homepage.js';
 
 loadHome()
