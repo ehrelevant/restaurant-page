@@ -1,6 +1,5 @@
 import {homepageQueue} from './homepage.js';
-
-const content = document.querySelector('#content')
+import './style.css'
 
 // Loads and displays base content container
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
@@ -31,7 +30,9 @@ function appendNewContent(pageQueue, container) {
 }
 
 
+// Initializes page content, only called once on start
 function initialize(){
+    const content = document.querySelector('#content');
     const baseContent = loadBase(content);
     appendNewContent(homepageQueue, baseContent);
 }
