@@ -1,5 +1,5 @@
 
-let menuQueue = [];
+let menupageQueue = [];
 
 // Food factory
 const Food = (name, price) => {
@@ -21,7 +21,7 @@ function generateFoodMenu() {
 function loadMenu() {
     const menu = generateFoodMenu();
 
-    menuQueue = menu.map((food) => {
+    menupageQueue = menu.map((food) => {
         const menuOption = document.createElement('div');
 
         const foodName = document.createElement('p');
@@ -42,4 +42,4 @@ function loadMenu() {
 
 loadMenu()
 
-export {menuQueue};
+export {menupageQueue};

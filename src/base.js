@@ -1,20 +1,31 @@
 import {homepageQueue} from './homepage.js';
-import {menuQueue} from './menu.js';
+import {menupageQueue} from './menu.js';
 import './style.css'
 
 // Loads and displays base content container
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
 function loadBase(container){
-    const pickHomeBtn = document.createElement('button');
-    pickHomeBtn.textContent = 'Home';
-    const pickMenuBtn = document.createElement('button');
-    pickMenuBtn.textContent = 'Menu';
-    const pickContactBtn = document.createElement('button');
-    pickContactBtn.textContent = 'Contact';
+    const homePageBtn = document.createElement('button');
+    homePageBtn.textContent = 'Home';
+    const menuPageBtn = document.createElement('button');
+    menuPageBtn.textContent = 'Menu';
+    const contactPageBtn = document.createElement('button');
+    contactPageBtn.textContent = 'Contact';
 
     const pageContent = document.createElement('div');
 
-    appendNewContent([pickHomeBtn, pickMenuBtn, pickContactBtn, pageContent], container)
+    homePageBtn.addEventListener('click', () => {
+        appendNewContent(homepageQueue, pageContent)
+    });
+    menuPageBtn.addEventListener('click', () => {
+        appendNewContent(menupageQueue, pageContent)
+    });
+    // contactPageBtn.addEventListener('click', () => {
+    //     appendNewContent(contactQueue, pageContent)
+    // });
+
+    appendNewContent([homePageBtn, menuPageBtn, contactPageBtn, pageContent],
+                    container)
     return pageContent;
 }
 
