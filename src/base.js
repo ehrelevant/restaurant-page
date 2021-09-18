@@ -1,4 +1,5 @@
 import {homepageQueue} from './homepage.js';
+import {menuQueue} from './menu.js';
 import './style.css'
 
 // Loads and displays base content container
