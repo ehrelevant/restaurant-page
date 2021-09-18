@@ -1,5 +1,6 @@
 import {homepageQueue} from './homepage.js';
 import {menupageQueue} from './menu.js';
+import {contactpageQueue} from './contact';
 import './style.css'
 
 // Loads and displays base content container
@@ -24,9 +25,9 @@ function loadBase(container){
     menuPageBtn.addEventListener('click', () => {
         appendNewContent(menupageQueue, pageContent)
     });
-    // contactPageBtn.addEventListener('click', () => {
-    //     appendNewContent(contactQueue, pageContent)
-    // });
+    contactPageBtn.addEventListener('click', () => {
+        appendNewContent(contactpageQueue, pageContent)
+    });
 
     appendNewContent([title, homePageBtn, menuPageBtn, contactPageBtn, pageContent],
                     container)
