@@ -5,6 +5,9 @@ import './style.css'
 // Loads and displays base content container
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
 function loadBase(container){
+    const title = document.createElement('h1');
+    title.textContent = 'Generic Dinner';
+
     const homePageBtn = document.createElement('button');
     homePageBtn.textContent = 'Home';
     const menuPageBtn = document.createElement('button');
@@ -13,6 +16,7 @@ function loadBase(container){
     contactPageBtn.textContent = 'Contact';
 
     const pageContent = document.createElement('div');
+    pageContent.classList.add('page-content')
 
     homePageBtn.addEventListener('click', () => {
         appendNewContent(homepageQueue, pageContent)
@@ -24,7 +28,7 @@ function loadBase(container){
     //     appendNewContent(contactQueue, pageContent)
     // });
 
-    appendNewContent([homePageBtn, menuPageBtn, contactPageBtn, pageContent],
+    appendNewContent([title, homePageBtn, menuPageBtn, contactPageBtn, pageContent],
                     container)
     return pageContent;
 }

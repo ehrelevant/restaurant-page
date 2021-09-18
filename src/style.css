@@ -3,3 +3,13 @@ div {
     /* Border is temporary, used to help with organizing*/
     border: 1px solid black;
 }
+
+.home-image {
+    width: 50%;
+    height: 50%;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+}
