@@ -16,12 +16,10 @@ function loadHome() {
     sampleImg.src = Chicken;
     sampleImg.classList.add('home-image')
 
-    const menuBtn = document.createElement('button');
-    menuBtn.textContent = 'See Our Menu';
 
-    homepageQueue.push(name, tagline, subtag, sampleImg, menuBtn)
+    homepageQueue.push(name, tagline, subtag, sampleImg)
 }
 
-loadHome()
+loadHome();
 
 export {homepageQueue};

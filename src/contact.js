@@ -17,6 +17,6 @@ function loadContact() {
     contactpageQueue.push(author, landline, cellphone, email)
 }
 
-loadContact()
+loadContact();
 
 export {contactpageQueue};

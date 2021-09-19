@@ -40,6 +40,6 @@ function loadMenu() {
     });
 }
 
-loadMenu()
+loadMenu();
 
 export {menupageQueue};
