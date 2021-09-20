@@ -1,6 +1,9 @@
 import Chicken from './images/chicken1.jpg';
+import {menuPageQueue} from './menu.js';
+import {baseContent, appendNewContent} from './base.js'
 
-let homepageQueue = [];
+
+let homePageQueue = [];
 
 function loadHome() {
     const name = document.createElement('h1');
@@ -16,10 +19,15 @@ function loadHome() {
     sampleImg.src = Chicken;
     sampleImg.classList.add('home-image')
 
+    const menuBtn = document.createElement('button');
+    menuBtn.textContent = 'See Our Menu';
+    menuBtn.addEventListener('click', ()=>{
+        appendNewContent(menuPageQueue, baseContent)
+    });
 
-    homepageQueue.push(name, tagline, subtag, sampleImg)
+    homePageQueue.push(name, tagline, subtag, sampleImg, menuBtn)
 }
 
 loadHome();
 
-export {homepageQueue};
+export {homePageQueue};

@@ -1,5 +1,5 @@
 
-let contactpageQueue = [];
+let contactPageQueue = [];
 
 function loadContact() {
     const author = document.createElement('p');
@@ -14,9 +14,9 @@ function loadContact() {
     const email = document.createElement('p');
     email.textContent = 'someplace@generic.com';
 
-    contactpageQueue.push(author, landline, cellphone, email)
+    contactPageQueue.push(author, landline, cellphone, email)
 }
 
 loadContact();
 
-export {contactpageQueue};
+export {contactPageQueue};

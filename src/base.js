@@ -1,7 +1,10 @@
-import {homepageQueue} from './homepage.js';
-import {menupageQueue} from './menu.js';
-import {contactpageQueue} from './contact';
+import {homePageQueue} from './homepage.js';
+import {menuPageQueue} from './menu.js';
+import {contactPageQueue} from './contact';
 import './style.css'
+
+const content = document.querySelector('#content');
+const baseContent = loadBase(content);
 
 // Loads and displays base content container
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
@@ -20,13 +23,13 @@ function loadBase(container){
     pageContent.classList.add('page-content')
 
     homePageBtn.addEventListener('click', () => {
-        appendNewContent(homepageQueue, pageContent)
+        appendNewContent(homePageQueue, pageContent)
     });
     menuPageBtn.addEventListener('click', () => {
-        appendNewContent(menupageQueue, pageContent)
+        appendNewContent(menuPageQueue, pageContent)
     });
     contactPageBtn.addEventListener('click', () => {
-        appendNewContent(contactpageQueue, pageContent)
+        appendNewContent(contactPageQueue, pageContent)
     });
 
     appendNewContent([title, homePageBtn, menuPageBtn, contactPageBtn, pageContent],
@@ -49,9 +52,7 @@ function appendNewContent(pageQueue, container) {
 
 // Initializes page content, only called once on start
 function initialize(){
-    const content = document.querySelector('#content');
-    const baseContent = loadBase(content);
-    appendNewContent(homepageQueue, baseContent);
+    appendNewContent(homePageQueue, baseContent);
 }
 
-export {initialize};
+export {initialize, baseContent, appendNewContent};
