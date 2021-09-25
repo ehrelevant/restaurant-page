@@ -2,6 +2,8 @@
 import {appendChildren, replaceContent} from './helper.js';
 
 import {homeContainer} from './homepage.js';
+import {menuContainer} from './menu.js';
+import {contactContainer} from './contact.js';
 
 import './style.css'
 
@@ -21,13 +23,13 @@ function loadBase(baseContainer){
     const baseContent = document.createElement('div');
 
     homePageBtn.addEventListener('click', () => {
-        //appendNewContent(homePageQueue, pageContent)
+        replaceContent(baseContent, homeContainer);
     });
     menuPageBtn.addEventListener('click', () => {
-        //appendNewContent(menuPageQueue, pageContent)
+        replaceContent(baseContent, menuContainer);
     });
     contactPageBtn.addEventListener('click', () => {
-        //appendNewContent(contactPageQueue, pageContent)
+        replaceContent(baseContent, contactContainer);
     });
 
     appendChildren(baseContainer, [title, homePageBtn, menuPageBtn, contactPageBtn, baseContent]);

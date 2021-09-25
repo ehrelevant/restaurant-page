@@ -1,5 +1,5 @@
 
-let menuPageQueue = [];
+import {appendChildren} from './helper.js'
 
 // Food factory
 const Food = (name, price) => {
@@ -17,11 +17,12 @@ function generateFoodMenu() {
     return foodMenu;
 }
 
-
 function loadMenu() {
+    const menuContainer = document.createElement('div');
+
     const menu = generateFoodMenu();
 
-    menuPageQueue = menu.map((food) => {
+    appendChildren(menuContainer, menu.map((food) => {
         const menuOption = document.createElement('div');
 
         const foodName = document.createElement('p');
@@ -37,9 +38,11 @@ function loadMenu() {
         menuOption.appendChild(foodPrice);
         menuOption.appendChild(addButton);
         return menuOption;
-    });
+    }));
+
+    return menuContainer;
 }
 
-loadMenu();
+const menuContainer = loadMenu();
 
-export {menuPageQueue};
+export {menuContainer};

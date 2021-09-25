@@ -1,7 +1,9 @@
 
-let contactPageQueue = [];
+import {appendChildren} from './helper.js'
 
 function loadContact() {
+    const contactContainer = document.createElement('div');
+
     const author = document.createElement('p');
     author.textContent = 'Webpage by KindaExists/Sleepy';
 
@@ -14,9 +16,10 @@ function loadContact() {
     const email = document.createElement('p');
     email.textContent = 'someplace@generic.com';
 
-    contactPageQueue.push(author, landline, cellphone, email)
+    appendChildren(contactContainer, [author, landline, cellphone, email]);
+    return contactContainer;
 }
 
-loadContact();
+const contactContainer = loadContact();
 
-export {contactPageQueue};
+export {contactContainer};
