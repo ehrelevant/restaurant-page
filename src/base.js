@@ -1,14 +1,13 @@
-import {homePageQueue} from './homepage.js';
-import {menuPageQueue} from './menu.js';
-import {contactPageQueue} from './contact';
-import './style.css'
 
-const content = document.querySelector('#content');
-const baseContent = loadBase(content);
+import {appendChildren, replaceContent} from './helper.js';
+
+import {homeContainer} from './homepage.js';
+
+import './style.css'
 
 // Loads and displays base content container
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
-function loadBase(container){
+function loadBase(baseContainer){
     const title = document.createElement('h1');
     title.textContent = 'Generic Dinner';
 
@@ -19,40 +18,27 @@ function loadBase(container){
     const contactPageBtn = document.createElement('button');
     contactPageBtn.textContent = 'Contact';
 
-    const pageContent = document.createElement('div');
-    pageContent.classList.add('page-content')
+    const baseContent = document.createElement('div');
 
     homePageBtn.addEventListener('click', () => {
-        appendNewContent(homePageQueue, pageContent)
+        //appendNewContent(homePageQueue, pageContent)
     });
     menuPageBtn.addEventListener('click', () => {
-        appendNewContent(menuPageQueue, pageContent)
+        //appendNewContent(menuPageQueue, pageContent)
     });
     contactPageBtn.addEventListener('click', () => {
-        appendNewContent(contactPageQueue, pageContent)
+        //appendNewContent(contactPageQueue, pageContent)
     });
 
-    appendNewContent([title, homePageBtn, menuPageBtn, contactPageBtn, pageContent],
-                    container)
-    return pageContent;
+    appendChildren(baseContainer, [title, homePageBtn, menuPageBtn, contactPageBtn, baseContent]);
+    return baseContent;
 }
-
-
-// Appends children/page content based on the queue order (pageQueue)
-function appendNewContent(pageQueue, container) {
-    // Clears page content
-    container.textContent = '';
-
-    // Appends new page content
-    for (const element of pageQueue) {
-        container.appendChild(element);
-    }
-}
-
 
 // Initializes page content, only called once on start
 function initialize(){
-    appendNewContent(homePageQueue, baseContent);
+    const bodyContent = document.querySelector('#content');
+    const baseContent = loadBase(bodyContent);
+    replaceContent(baseContent, homeContainer);
 }
 
-export {initialize, baseContent, appendNewContent};
+export {initialize};

@@ -1,11 +1,10 @@
+import {appendChildren} from './helper.js'
+
 import Chicken from './images/chicken1.jpg';
-import {menuPageQueue} from './menu.js';
-import {baseContent, appendNewContent} from './base.js'
-
-
-let homePageQueue = [];
 
 function loadHome() {
+    const homeContainer = document.createElement('div');
+
     const name = document.createElement('h1');
     name.textContent = 'Generic Dinner';
 
@@ -22,12 +21,13 @@ function loadHome() {
     const menuBtn = document.createElement('button');
     menuBtn.textContent = 'See Our Menu';
     menuBtn.addEventListener('click', ()=>{
-        appendNewContent(menuPageQueue, baseContent)
+
     });
 
-    homePageQueue.push(name, tagline, subtag, sampleImg, menuBtn)
+    appendChildren(homeContainer, [name, tagline, subtag, sampleImg, menuBtn])
+    return homeContainer;
 }
 
-loadHome();
+const homeContainer = loadHome();
 
-export {homePageQueue};
+export {homeContainer};
