@@ -36,11 +36,12 @@ function loadBase(baseContainer){
     return baseContent;
 }
 
+const bodyContent = document.querySelector('#content');
+const baseContent = loadBase(bodyContent);
+
 // Initializes page content, only called once on start
 function initialize(){
-    const bodyContent = document.querySelector('#content');
-    const baseContent = loadBase(bodyContent);
     replaceContent(baseContent, homeContainer);
 }
 
-export {initialize};
+export {initialize, baseContent};

@@ -1,4 +1,7 @@
-import {appendChildren} from './helper.js'
+import {appendChildren, replaceContent} from './helper.js'
+
+import {menuContainer} from './menu.js';
+import {baseContent} from './base.js'
 
 import Chicken from './images/chicken1.jpg';
 
@@ -21,7 +24,7 @@ function loadHome() {
     const menuBtn = document.createElement('button');
     menuBtn.textContent = 'See Our Menu';
     menuBtn.addEventListener('click', ()=>{
-
+        replaceContent(baseContent, menuContainer)
     });
 
     appendChildren(homeContainer, [name, tagline, subtag, sampleImg, menuBtn])
