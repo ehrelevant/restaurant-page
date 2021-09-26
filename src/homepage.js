@@ -7,6 +7,7 @@ import Chicken from './images/chicken1.jpg';
 
 function loadHome() {
     const homeContainer = document.createElement('div');
+    homeContainer.classList.add('page', 'home-page');
 
     const name = document.createElement('h1');
     name.textContent = 'Generic Dinner';

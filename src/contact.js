@@ -3,6 +3,7 @@ import {appendChildren} from './helper.js'
 
 function loadContact() {
     const contactContainer = document.createElement('div');
+    contactContainer.classList.add('page', 'contact-page');
 
     const author = document.createElement('p');
     author.textContent = 'Webpage by KindaExists/Sleepy';

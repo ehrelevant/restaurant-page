@@ -1,15 +1,41 @@
 
+:root {
+    font-family: cursive, sans-serif;
+}
+
 div {
     /* Border is temporary, used to help with organizing*/
     border: 1px solid black;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 
 .home-image {
     width: 50%;
     height: 50%;
 }
 
-.page-content {
+.base {
+    background-color: #ddd;
+}
+
+
+.page {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+}
+
+.home-page {
+
+}
+.menu-page {
+
+}
+.contact-page {
+
 }

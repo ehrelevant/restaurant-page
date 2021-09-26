@@ -10,6 +10,8 @@ import './style.css'
 // Loads and displays base content container
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
 function loadBase(baseContainer){
+    baseContainer.classList.add('base')
+
     const title = document.createElement('h1');
     title.textContent = 'Generic Dinner';
 

@@ -19,6 +19,8 @@ function generateFoodMenu() {
 
 function loadMenu() {
     const menuContainer = document.createElement('div');
+    menuContainer.classList.add('page', 'menu-page');
+
 
     const menu = generateFoodMenu();
 
