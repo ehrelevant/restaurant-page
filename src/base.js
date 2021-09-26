@@ -11,9 +11,14 @@ import './style.css'
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
 function loadBase(baseContainer){
     baseContainer.classList.add('base')
+    const baseContent = document.createElement('div');
 
     const title = document.createElement('h1');
     title.textContent = 'Generic Dinner';
+
+    const navbar = document.createElement('nav');
+    navbar.classList.add('navbar');
+
 
     const homePageBtn = document.createElement('button');
     homePageBtn.textContent = 'Home';
@@ -21,8 +26,6 @@ function loadBase(baseContainer){
     menuPageBtn.textContent = 'Menu';
     const contactPageBtn = document.createElement('button');
     contactPageBtn.textContent = 'Contact';
-
-    const baseContent = document.createElement('div');
 
     homePageBtn.addEventListener('click', () => {
         replaceContent(baseContent, homeContainer);
@@ -34,7 +37,10 @@ function loadBase(baseContainer){
         replaceContent(baseContent, contactContainer);
     });
 
-    appendChildren(baseContainer, [title, homePageBtn, menuPageBtn, contactPageBtn, baseContent]);
+    appendChildren(navbar, [homePageBtn, menuPageBtn, contactPageBtn]);
+
+
+    appendChildren(baseContainer, [title, navbar, baseContent]);
     return baseContent;
 }
 
