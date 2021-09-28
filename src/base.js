@@ -1,9 +1,6 @@
+import {appendChildren} from './helper.js';
 
-import {appendChildren, replaceContent} from './helper.js';
-
-import {homeContainer} from './homepage.js';
-import {menuContainer} from './menu.js';
-import {contactContainer} from './contact.js';
+import {switchHomePage, switchMenuPage, switchContactPage} from './index.js'
 
 import './style.css'
 
@@ -28,13 +25,13 @@ function loadBase(baseContainer){
     contactPageBtn.textContent = 'Contact';
 
     homePageBtn.addEventListener('click', () => {
-        replaceContent(baseContent, homeContainer);
+        switchHomePage();
     });
     menuPageBtn.addEventListener('click', () => {
-        replaceContent(baseContent, menuContainer);
+        switchMenuPage();
     });
     contactPageBtn.addEventListener('click', () => {
-        replaceContent(baseContent, contactContainer);
+        switchContactPage();
     });
 
     appendChildren(navbar, [homePageBtn, menuPageBtn, contactPageBtn]);
@@ -47,9 +44,4 @@ function loadBase(baseContainer){
 const bodyContent = document.querySelector('#content');
 const baseContent = loadBase(bodyContent);
 
-// Initializes page content, only called once on start
-function initialize(){
-    replaceContent(baseContent, homeContainer);
-}
-
-export {initialize, baseContent};
+export {baseContent};
