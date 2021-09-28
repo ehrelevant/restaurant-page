@@ -10,8 +10,12 @@ function loadBase(baseContainer){
     baseContainer.classList.add('base')
     const baseContent = document.createElement('div');
 
+    const titleBox =  document.createElement('div');
+    titleBox.classList.add('title-container');
+
     const title = document.createElement('h1');
     title.textContent = 'Generic Dinner';
+    titleBox.appendChild(title);
 
     const navbar = document.createElement('nav');
     navbar.classList.add('navbar');
@@ -37,7 +41,7 @@ function loadBase(baseContainer){
     appendChildren(navbar, [homePageBtn, menuPageBtn, contactPageBtn]);
 
 
-    appendChildren(baseContainer, [title, navbar, baseContent]);
+    appendChildren(baseContainer, [titleBox, navbar, baseContent]);
     return baseContent;
 }
 
