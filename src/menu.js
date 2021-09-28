@@ -26,6 +26,7 @@ function loadMenu() {
 
     appendChildren(menuContainer, menu.map((food) => {
         const menuOption = document.createElement('div');
+        menuOption.classList.add('food-item')
 
         const foodName = document.createElement('p');
         foodName.textContent = `"${food.name}"`;

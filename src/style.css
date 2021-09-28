@@ -66,14 +66,19 @@ body {
 
 }
 .home-image {
-    width: 50%;
-    height: 50%;
+    width: 600px;
 }
 
 
 .menu-page {
 
 }
+.food-item {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+}
+
 .contact-page {
 
 }
