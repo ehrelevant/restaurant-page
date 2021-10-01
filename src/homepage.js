@@ -8,6 +8,10 @@ function loadHome() {
     const homeContainer = document.createElement('div');
     homeContainer.classList.add('page', 'home-page');
 
+
+    const leftHome = document.createElement('div');
+    leftHome.classList.add('left-home');
+
     const name = document.createElement('h1');
     name.textContent = 'Generic Dinner';
 
@@ -16,6 +20,10 @@ function loadHome() {
 
     const subtag = document.createElement('h3');
     subtag.textContent = 'The only dinner that looks exactly the same as the last 5 dinners you\'ve entered';
+
+
+    const rightHome = document.createElement('div');
+    rightHome.classList.add('right-home');
 
     const sampleImg = document.createElement('img');
     sampleImg.src = Chicken;
@@ -27,7 +35,10 @@ function loadHome() {
         switchMenuPage();
     });
 
-    appendChildren(homeContainer, [name, tagline, subtag, sampleImg, menuBtn])
+
+    appendChildren(leftHome, [name, tagline, subtag])
+    appendChildren(rightHome, [sampleImg, menuBtn])
+    appendChildren(homeContainer, [leftHome, rightHome])
     return homeContainer;
 }
 

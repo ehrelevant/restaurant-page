@@ -8,7 +8,6 @@ import './style.css'
 // Everything loaded here won't be reloaded, so they don't need to be saved in a queue
 function loadBase(baseContainer){
     baseContainer.classList.add('base')
-    const baseContent = document.createElement('div');
 
     const titleBox =  document.createElement('div');
     titleBox.classList.add('title-container');
@@ -20,6 +19,8 @@ function loadBase(baseContainer){
     const navbar = document.createElement('nav');
     navbar.classList.add('navbar');
 
+    const baseContent = document.createElement('div');
+    baseContent.classList.add('page-container');
 
     const homePageBtn = document.createElement('button');
     homePageBtn.textContent = 'Home';
