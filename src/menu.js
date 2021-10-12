@@ -30,12 +30,15 @@ function loadMenu() {
 
         const foodName = document.createElement('p');
         foodName.textContent = `"${food.name}"`;
+        foodName.classList.add('food-name')
 
         const foodPrice = document.createElement('p');
-        foodPrice.textContent = `PHP ${food.price}`;
+        foodPrice.textContent = `Php ${food.price}`;
+        foodPrice.classList.add('food-price')
 
         const addButton = document.createElement('button');
         addButton.textContent = 'Add food to cart';
+        addButton.classList.add('add-food-btn')
 
         menuOption.appendChild(foodName);
         menuOption.appendChild(foodPrice);

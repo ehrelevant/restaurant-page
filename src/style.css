@@ -2,6 +2,7 @@
 :root {
     font-family: cursive, sans-serif;
     --right-home-radius: 8px;
+    --food-item-radius: 8px;
 }
 
 
@@ -149,12 +150,48 @@ button {
 
 
 .menu-page {
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .food-item {
-    border: 3px solid #555;
-    border-radius: 5px;
+    border-radius: var(--food-item-radius);
+    background-color: #555;
+    color: #fff;
+    padding: 0;
     margin: 5px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+.food-name {
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+
+    font-size: 3em;
+    font-weight: bold;
+}
+.food-price {
+    margin: 0;
+    margin: 10px 0;
+    padding: 0;
+
+    font-size: 1.2em;
+}
+.add-food-btn {
+    height: 40px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 0 0 var(--food-item-radius) var(--food-item-radius);
+
+    transition: color 200ms;
+    transition: background-color 200ms;
+    font-weight: bold;
+}
+.add-food-btn:hover {
+    background-color: #ccc;
+    color: #222;
 }
 
 .contact-page {
