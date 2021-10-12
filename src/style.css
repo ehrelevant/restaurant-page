@@ -59,6 +59,7 @@ button {
 
     min-width: 40px;
     width: 30%;
+    font-weight: bold;
 
     border: none;
     border-radius: 20px;
@@ -195,5 +196,15 @@ button {
 }
 
 .contact-page {
-
+    text-align: center;
+    padding: 40px 0;
+}
+.contact-page > p {
+    margin: 0;
+    margin: 8px 0;
+    font-size: 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.author-text {
+    font-weight: bolder;
 }

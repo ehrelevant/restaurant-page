@@ -7,6 +7,7 @@ function loadContact() {
 
     const author = document.createElement('p');
     author.textContent = 'Webpage by KindaExists/Sleepy';
+    author.classList.add('author-text')
 
     const landline = document.createElement('p');
     landline.textContent = '123-4567';
