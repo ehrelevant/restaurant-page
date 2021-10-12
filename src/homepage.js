@@ -19,7 +19,7 @@ function loadHome() {
     tagline.textContent = 'Only the best at being a Dinner';
 
     const subtag = document.createElement('h3');
-    subtag.textContent = 'The only dinner that looks exactly the same as the last 5 dinners you\'ve entered';
+    subtag.textContent = 'The only dinner that looks exactly the same as the last five dinners you\'ve entered';
 
 
     const rightHome = document.createElement('div');

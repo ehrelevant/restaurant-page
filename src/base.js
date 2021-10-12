@@ -13,7 +13,7 @@ function loadBase(baseContainer){
     titleBox.classList.add('title-container');
 
     const title = document.createElement('h1');
-    title.textContent = 'Generic Dinner';
+    title.textContent = '~ Generic Dinner ~';
     titleBox.appendChild(title);
 
     const navbar = document.createElement('nav');
